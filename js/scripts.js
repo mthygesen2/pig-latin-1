@@ -46,7 +46,17 @@ var pigLatin = function(str) {
   }
   };
 
+$(document).ready(function() {
+  $("form#pig-latin").submit(function(event) {
+    var str = $("input#str").val();
+    var result = pigLatin(str);
 
+    $("#result").show();
+    $("#resultText").text(result);
+
+    event.preventDefault();
+  });
+});
 
 
 
