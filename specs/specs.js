@@ -4,7 +4,7 @@ describe("pigLatin", function () {
   });
 
   it("is a word beginning with multiple consonants, move all consonants to end and add 'ay'", function() {
-    expect(pigLatin("plate")).to.equal("blah");
+    expect(pigLatin("plate")).to.equal("ateplay");
   });
 
   it("is a word beginning with a consonant, move consonant to end and add 'ay'", function() {
