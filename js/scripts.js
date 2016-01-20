@@ -4,22 +4,41 @@ var pigLatin = function(str) {
   var suffix = "ay";
   var firstletter = str.slice(0,1);
   var secondletter = str.slice(1,2);
+  var thirdletter = str.slice(2,3);
+  var firstthree = str.slice(0,3);
+  var hasQu = /[qu]/.test(firstthree);
   var firstisvowel = /[aeiou]/.test(firstletter);
   var secondisvowel = /[aeiou]/.test(secondletter);
+
   if (firstisvowel === true) {
     return (str += suffix);
   }
 
-  else if ((firstisvowel === false) && (secondisvowel === false)) {
-    //  console.log("str.charAt0": + str.charAt(0));
+  else if ((firstisvowel === false) && (secondisvowel === false) && (hasQu === false)) {
   var endLetters = str.slice(2);
   var firstTwo = (firstletter += secondletter);
   return (endLetters += firstTwo += suffix);
   }
 
-  else if ((firstisvowel === false) && (secondisvowel === true)) {
+  else if ((firstisvowel === false) && (secondisvowel === true) && (hasQu === false)) {
     var endLetters2 = str.slice(1);
     return (endLetters2 += firstletter += suffix);
+  }
+
+  else if ((firstisvowel === false) && (hasQu === true) && (firstletter !== "q")) {
+    var endLetters3 = str.slice(3);
+    return (endLetters3 += firstthree += suffix) ;
+  }
+
+  else if ((firstletter === "q") && (secondletter === "u")) {
+    var endLetters4 = str.slice(2);
+    var firstTwo = (firstletter += secondletter);
+    return (endLetters4 += firstTwo += suffix);
+  }
+
+  else if ((firstletter === "y")) {
+    var endletters5 = str.slice(1);
+    return (endletters5 += firstletter += suffix);
   }
 
   else {
@@ -32,7 +51,7 @@ var pigLatin = function(str) {
 
 
 
-
+// (firstletter === "q") && (secondletter === "u") || (firstisvowel === false) && (secondletter === "q") && (thirdletter === "u")
 
 
 
