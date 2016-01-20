@@ -1,19 +1,32 @@
 var pigLatin = function(str) {
-  if (str.startsWith("a", "e", "i", "o", "u")) {
-    return (str += "ay");
+  // var word = str.slice(1); //grabs all but first letter
+  // var word2 = str.slice(0,1); //grabs first letter
+  var suffix = "ay";
+  var isvowel = /[^aeiou]/.test(str);
+  if (isvowel = true) {
+    return (str += suffix);
 
-  } else if (str.charAt(0) !== ("a", "e", "i", "o", "u")) {
+  }
+
+  else if (str.charAt(0) !== ((("a", "e", "i", "o", "u")) && (str.charAt(1) !== ("a", "e", "i", "o", "u")))) {
+
+  //  console.log("str.charAt0": + str.charAt(0));
+  return ("blah");
+  }
+
+  else if (str.charAt(0) !== ("a", "e", "i", "o", "u")) {
     var word = str.slice(1); //grabs all but first letter
     var word2 = str.slice(0,1); //grabs first letter
-    var suffix = "ay";
-    return (word += word2 +=suffix);
+    // console.log("str.charAt(0)": + str.charAt(0));
+    console.log("word:" + word);
+    console.log("word2:" + word2);
 
-      // var word = str - (str.slice(0,1));
-      // return (word += (str.slice(0,1)) += "ay");
+    return (word += word2 += suffix);
+  }
 
-  } else {
+  else {
     return false;
-    }
+  }
   };
 
 
@@ -25,9 +38,8 @@ var pigLatin = function(str) {
 
 
 
-
-
-
+        // var word = str - (str.slice(0,1));
+        // return (word += (str.slice(0,1)) += "ay");
 
 
 // $(document).ready(function(){
