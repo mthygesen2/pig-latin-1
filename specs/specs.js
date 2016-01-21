@@ -2,7 +2,7 @@ describe("pigLatin", function () {
   it("is a word beginning with a vowel, add 'ay' to end", function() {
     expect(pigLatin("integer")).to.equal("integeray");
   });
-
+// this next one seems like it should come later, after the single consonant one?
   it("is a word beginning with multiple consonants, move all consonants to end and add 'ay'", function() {
     expect(pigLatin("plate")).to.equal("ateplay");
   });

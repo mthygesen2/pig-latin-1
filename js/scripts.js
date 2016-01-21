@@ -1,6 +1,7 @@
 var pigLatin = function(str) {
   // var word = str.slice(1); //grabs all but first letter
   // var word2 = str.slice(0,1); //grabs first letter
+  // these variables should be lowerCamelCase
   var suffix = "ay";
   var firstletter = str.slice(0,1);
   var secondletter = str.slice(1,2);
@@ -13,7 +14,7 @@ var pigLatin = function(str) {
   if (firstisvowel === true) {
     return (str += suffix);
   }
-
+// lines 19-21 inside the conditional here should be indented
   else if ((firstisvowel === false) && (secondisvowel === false) && (hasQu === false)) {
   var endLetters = str.slice(2);
   var firstTwo = (firstletter += secondletter);
@@ -29,13 +30,13 @@ var pigLatin = function(str) {
     var endLetters3 = str.slice(3);
     return (endLetters3 += firstthree += suffix) ;
   }
-
+// endLetters4 and endLetters are the same and could be condensed
   else if ((firstletter === "q") && (secondletter === "u")) {
     var endLetters4 = str.slice(2);
     var firstTwo = (firstletter += secondletter);
     return (endLetters4 += firstTwo += suffix);
   }
-
+// this one is redundant and never going to happen because under your rules it's going to get swallowed up by one of the previous rules, since y isn't a vowel under your vowel detection, so doesn't need an exception.
   else if ((firstletter === "y")) {
     var endletters5 = str.slice(1);
     return (endletters5 += firstletter += suffix);
